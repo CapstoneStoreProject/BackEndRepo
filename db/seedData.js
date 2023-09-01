@@ -26,6 +26,16 @@ async function createTables() {
                 price DECIMAL(10,2)
             );
         `);
+
+        await client.query(`
+            CREATE TABLE users (
+                id SERIAL PRIMARY KEY,
+                name TEXT,
+                username TEXT UNIQUE NOT NULL,
+                password TEXT NOT NULL,
+                active BOOLEAN DEFAULT true
+            );
+        `);
     } catch(error) {
         throw error;
     }
