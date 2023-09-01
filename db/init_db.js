@@ -1,5 +1,5 @@
 const {
-  client
+  client, user
   // declare your model imports here
   // for example, User
 } = require('./')
