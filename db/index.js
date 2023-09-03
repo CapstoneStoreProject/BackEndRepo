@@ -1,7 +1,8 @@
 const client = require('./client')
-const {} = require('./models/user.js')
+const { createUser } = require('./models/user.js')
 // user model imports between {} above
 module.exports = {
-  client
+  client,
+  createUser
   // user model imports here
 }

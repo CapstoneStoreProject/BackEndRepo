@@ -1,5 +1,6 @@
 const client = require('./client');
 const { createUser } = require('./models/user.js');
+const { createCat } = require('./models/cat.js');
 
 //STRETCH GOAL: users can "favorite" cats to review the list 
 //later when they are done going through all the cats they can
@@ -32,11 +33,12 @@ async function createTables() {
             CREATE TABLE cats (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(50),
-                "imgUrl" TEXT,
+                imgurl TEXT,
                 age INTEGER,
                 sex VARCHAR(6),
                 color TEXT,
                 description TEXT,
+                breed TEXT,
                 price VARCHAR(4)
             );
         `);
@@ -74,20 +76,24 @@ async function createInitialUsers() {
     }
 }
 
-async function createCats() {
+async function createInitialCats() {
     try {
         console.log("Starting to create cats...");
         const catsToCreate = [
             { 
                 name: "Socks", 
-                imgUrl: "https://conservationcubclub.com/wp-content/uploads/2012/05/Iams-Delilah-May-12-cat.jpg",
-                age: "5",
+                imgurl: "https://conservationcubclub.com/wp-content/uploads/2012/05/Iams-Delilah-May-12-cat.jpg",
+                age: 5,
                 sex: "male",
                 color: "grey with black stripes and white socks",
                 description: "Snuggly, loving cat. Socks enjoys long naps, chasing the laser pointer, and looking out the window.",
+                breed: "Domestic Shorthair",
                 price: "FREE"
             }
+            
         ]
+        const cats = await Promise.all(catsToCreate.map(createCat));
+        console.log("Cats created")
     } catch (error) {
         throw error;
     }
@@ -100,7 +106,7 @@ async function rebuildDB() {
         await dropTables();
         await createTables();
         await createInitialUsers();
-        await createCats();
+        await createInitialCats();
      
     } catch (error) {
         throw error;
