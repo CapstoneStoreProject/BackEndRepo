@@ -1,4 +1,5 @@
 const client = require('./client');
+const { createUser } = require('./models/user.js');
 
 //STRETCH GOAL: users can "favorite" cats to review the list 
 //later when they are done going through all the cats they can
