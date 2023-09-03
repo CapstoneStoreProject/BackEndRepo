@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "server:dev": "nodemon index.js",
-    "db:build": "node ./db/init_db"
+    "db:build": "node ./db/init_db",
+    "seed:dev": "nodemon ./db/seed.js",
+    "seed": "node ./db/seed.js",
+    "start:dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watchAll --runInBand"
   },
   "keywords": [],
   "author": "",
