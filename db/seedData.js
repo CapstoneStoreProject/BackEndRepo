@@ -34,7 +34,7 @@ async function createTables() {
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(50),
                 imgurl TEXT,
-                age INTEGER,
+                age VARCHAR(50),
                 sex VARCHAR(6),
                 color TEXT,
                 description TEXT,
@@ -83,14 +83,63 @@ async function createInitialCats() {
             { 
                 name: "Socks", 
                 imgurl: "https://conservationcubclub.com/wp-content/uploads/2012/05/Iams-Delilah-May-12-cat.jpg",
-                age: 5,
+                age: "5 years",
                 sex: "male",
                 color: "grey with black stripes and white socks",
                 description: "Snuggly, loving cat. Socks enjoys long naps, chasing the laser pointer, and looking out the window.",
                 breed: "Domestic Shorthair",
                 price: "FREE"
-            }
-            
+            },
+            {
+                name: "Black Star",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd19fjBzqN49AdndZBdZmWTYYAn9exVl5Qbg&usqp=CAU",
+                age: "5 months",
+                sex: "male",
+                color: "Black with white star on chest",
+                description: "Rambunctious, playful, and outgoing kitty excited to get his forever home. He plays well with other cats and will make a fine addition to any family.",
+                breed: "Domestic Shorthair",
+                price: "FREE"
+            },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
         ]
         const cats = await Promise.all(catsToCreate.map(createCat));
         console.log("Cats created")

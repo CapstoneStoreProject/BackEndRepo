@@ -12,9 +12,21 @@ async function createCat({ name, imgurl, age, sex, color, description, breed, pr
         throw error;
     }
 }
+async function deleteCatById(id) {
+    try {
+        const { rows: [cat] } = await client.query(`
+        DELETE FROM cats
+        WHERE id=$1
+        RETURNING *;
+        `, [id]);
+        return cat;
+    } catch (error) {
+        throw error;
+    }
+}
 module.exports = {
-    createCat
-    
+    createCat,
+    deleteCatById
   }
 // id SERIAL PRIMARY KEY,
 // name VARCHAR(50),
