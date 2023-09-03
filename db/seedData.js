@@ -16,7 +16,7 @@ async function dropTables() {
         console.log("Starting to drop tables...");
         await client.query(`
             DROP TABLE IF EXISTS cats;
-            DROP TABLES IF EXISTS users;
+            DROP TABLE IF EXISTS users;
         `);
         console.log("Finished dropping tables!");
     } catch(error) {
@@ -31,13 +31,12 @@ async function createTables() {
             CREATE TABLE cats (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(50),
-                "imgUrl" TEXT
+                "imgUrl" TEXT,
                 age INTEGER,
                 sex VARCHAR(6),
                 color TEXT,
                 description TEXT,
                 price VARCHAR(4)
-                favorite BOOLEAN DEFAULT false
             );
         `);
 
@@ -81,7 +80,7 @@ async function createCats() {
             { 
                 name: "Socks", 
                 imgUrl: "https://conservationcubclub.com/wp-content/uploads/2012/05/Iams-Delilah-May-12-cat.jpg",
-                age: 5,
+                age: "5",
                 sex: "male",
                 color: "grey with black stripes and white socks",
                 description: "Snuggly, loving cat. Socks enjoys long naps, chasing the laser pointer, and looking out the window.",
