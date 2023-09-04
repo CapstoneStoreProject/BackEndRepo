@@ -100,16 +100,16 @@ async function createInitialCats() {
                 breed: "Domestic Shorthair",
                 price: "FREE"
             },
-            // {
-            //     name: ,
-            //     imgurl: ,
-            //     age: ,
-            //     sex: ,
-            //     color: ,
-            //     description: ,
-            //     breed: ,
-            //     price: 
-            // },
+            {
+                name: "Punch",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxvIPwYoxrPiDl_PadvadWhBkFPa66HEO4BA&usqp=CAU",
+                age: "1 year",
+                sex: "Female",
+                color: "Black and white tuxedo cat",
+                description: "Punch is a one person cat. She doesn't like other animals or anyone other than the person she decides is her person. Do not take her if you have other pets or many people in the home. She is very affectionate to her one person.",
+                breed: "Domestic Shorthair",
+                price: "FREE"
+            },
             // {
             //     name: ,
             //     imgurl: ,

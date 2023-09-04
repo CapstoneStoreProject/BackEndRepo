@@ -27,12 +27,4 @@ async function deleteCatById(id) {
 module.exports = {
     createCat,
     deleteCatById
-  }
-// id SERIAL PRIMARY KEY,
-// name VARCHAR(50),
-// "imgUrl" TEXT,
-// age INTEGER,
-// sex VARCHAR(6),
-// color TEXT,
-// description TEXT,
-// price VARCHAR(4)
+}
