@@ -1,5 +1,17 @@
 const client = require('../client');
 
+async function getAllCats() {
+    try {
+        const { rows } = await client.query(`
+        SELECT *
+        FROM cats;
+        `);
+        return rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
 async function createCat({ name, imgurl, age, sex, color, description, breed, price }) {
     try {
         const { rows: [cat] } = await client.query(`
@@ -12,6 +24,20 @@ async function createCat({ name, imgurl, age, sex, color, description, breed, pr
         throw error;
     }
 }
+
+async function getCatById(id) {
+    try {
+        const { rows: [cat] } = await client.query(`
+        SELECT *
+        FROM bikes
+        WHERE id = $1;
+        `, [id]);
+        return cat;
+    } catch (error) {
+        throw error;
+    }
+}
+
 async function deleteCatById(id) {
     try {
         const { rows: [cat] } = await client.query(`
@@ -24,7 +50,10 @@ async function deleteCatById(id) {
         throw error;
     }
 }
+
 module.exports = {
+    getAllCats,
     createCat,
+    getCatById,
     deleteCatById
 }

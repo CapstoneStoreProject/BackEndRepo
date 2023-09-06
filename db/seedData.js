@@ -110,6 +110,46 @@ async function createInitialCats() {
                 breed: "Domestic Shorthair",
                 price: "FREE"
             },
+            {
+                name: "Mia",
+                imgurl: "",
+                age: "2 years",
+                sex: "Female",
+                color: "Black",
+                description: "",
+                breed: "Domestic Longhair",
+                price: "FREE"
+            },
+            {
+                name: "Blue",
+                imgurl: "",
+                age: "8 months",
+                sex: "Female",
+                color: "Blue Grey",
+                description: "",
+                breed: "Russian Blue",
+                price: "FREE"
+            },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     price: 
+            // },
             // {
             //     name: ,
             //     imgurl: ,
