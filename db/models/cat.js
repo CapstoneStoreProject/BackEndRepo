@@ -25,13 +25,13 @@ async function createCat({ name, imgurl, age, sex, color, description, breed, pr
     }
 }
 
-async function getCatById(id) {
+async function getCatById(catId) {
     try {
         const { rows: [cat] } = await client.query(`
         SELECT *
         FROM bikes
         WHERE id = $1;
-        `, [id]);
+        `, [catId]);
         return cat;
     } catch (error) {
         throw error;
@@ -51,9 +51,21 @@ async function deleteCatById(id) {
     }
 }
 
+async function deleteAllCats() {
+    try {
+        const { rows } = await client.query(`
+        DELETE FROM cats;
+        `);
+        return rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     getAllCats,
     createCat,
     getCatById,
-    deleteCatById
+    deleteCatById,
+    deleteAllCats
 }

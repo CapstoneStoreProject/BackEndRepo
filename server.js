@@ -15,6 +15,7 @@ server.use(morgan('dev'))
 server.use(express.json())
 
 // here's our static files
+server.use(express.static())
 
 // here's our API
 server.use('/api', require('./api'))

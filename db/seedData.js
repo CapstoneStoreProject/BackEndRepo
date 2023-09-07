@@ -52,6 +52,25 @@ async function createTables() {
                 active BOOLEAN DEFAULT true
             );
         `);
+        // await client.query(`
+        //     CREATE TABLE carts (
+        //         cart_id SERIAL PRIMARY KEY,
+        //         user_id INTEGER,
+        //         FOREIGN KEY (user_id) REFERENCES users (user_id)
+        //     );
+        // `);
+
+        // await client.query(`
+        //     CREATE TABLE cart_items (
+        //         cart_item_id SERIAL PRIMARY KEY,
+        //         cart_id INTEGER,
+        //         product_id INTEGER,
+        //         quantity INTEGER,
+        //         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        //         FOREIGN KEY (cart_id) REFERENCES carts (cart_id),
+        //         FOREIGN KEY (product_id) REFERENCES products (product_id)
+        //     );
+        // `);
 
         console.log("Finished building tables!");
     } catch(error) {
