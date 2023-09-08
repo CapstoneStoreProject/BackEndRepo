@@ -6,11 +6,7 @@ const { getUserById } = require('../db');
 const client = require('../db/client');
 const { JWT_SECRET = 'neverTell'} = process.env;
 
-router.get('/', (req, res, next) => {
-  res.send({
-    message: 'API is under construction!'
-  })
-})
+
 
 // place your routers here
 // GET /api/health
@@ -67,9 +63,9 @@ router.use((req, res, next) => {
 const usersRouter = require('./users');
 router.use('/users', usersRouter);
 
-// ROUTER: /api/bikes
+// ROUTER: /api/cats
 const catsRouter = require('./cats');
-router.use('/bikes', catsRouter);
+router.use('/cats', catsRouter);
 
 
-module.exports = apiRouter
+module.exports = router
