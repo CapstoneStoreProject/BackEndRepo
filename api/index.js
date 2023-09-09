@@ -61,11 +61,11 @@ router.use((req, res, next) => {
 
 // ROUTER: /api/users
 const usersRouter = require('./user');
-router.use('/user', usersRouter);
+router.use('/users', usersRouter);
 
-// ROUTER: /api/cats
+// ROUTER: /api/cat
 const catsRouter = require('./cat');
-router.use('/cat', catsRouter);
+router.use('/cats', catsRouter);
 
 
 module.exports = router

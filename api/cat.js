@@ -4,7 +4,7 @@ const { getAllCats, getCatById, deleteCatById, deleteAllCats } = require('../db/
 const { requireUser } = require('./utils');
 
 
-// GET /api/cats
+// GET /api/cat
 router.get('/', async (req, res, next) => {
     try {
         const cats = await getAllCats();
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-// GET /api/cats/:catId
+// GET /api/cat/:catId
 router.get('/:catId', async (req, res, next) => {
     try {
         const cat = await getCatById(req.params.catId);
