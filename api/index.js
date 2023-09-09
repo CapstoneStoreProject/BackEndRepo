@@ -60,12 +60,12 @@ router.use((req, res, next) => {
 });
 
 // ROUTER: /api/users
-const usersRouter = require('./users');
-router.use('/users', usersRouter);
+const usersRouter = require('./user');
+router.use('/user', usersRouter);
 
 // ROUTER: /api/cats
-const catsRouter = require('./cats');
-router.use('/cats', catsRouter);
+const catsRouter = require('./cat');
+router.use('/cat', catsRouter);
 
 
 module.exports = router
