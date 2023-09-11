@@ -50,7 +50,9 @@ async function getUser({username, password}) {
   try {
     const user = await getUserByUsername(username);
     if(!user) return;
+    console.log(password)
     const hashedPassword = user.password;
+    console.log(hashedPassword)
     const passwordsMatch = await bcrypt.compare(password, hashedPassword);
     if(!passwordsMatch) return;
     delete user.password;
@@ -90,7 +92,7 @@ async function getUserByUsername(userName) {
     // if it does:
     // delete the 'password' key from the returned object
     const [user] = rows;
-    delete user.password;
+    // delete user.password;
     return user;
   } catch (error) {
     console.error(error)
