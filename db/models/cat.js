@@ -29,7 +29,7 @@ async function getCatById(catId) {
     try {
         const { rows: [cat] } = await client.query(`
         SELECT *
-        FROM bikes
+        FROM cats
         WHERE id = $1;
         `, [catId]);
         return cat;

@@ -67,8 +67,6 @@ router.use('/users', usersRouter);
 const catsRouter = require('./cat');
 router.use('/cats', catsRouter);
 
-// // ROUTER: /api/users/register
-// const usersRegisterRouter = require('./user');
-// router.use('/users/register', usersRegisterRouter);
+
 
 module.exports = router
