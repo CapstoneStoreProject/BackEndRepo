@@ -25,13 +25,13 @@ async function createCat({ name, imgurl, age, sex, color, description, breed, pr
     }
 }
 
-async function getCatById(catId) {
+async function getCatById(id) {
     try {
         const { rows: [cat] } = await client.query(`
         SELECT *
         FROM cats
         WHERE id = $1;
-        `, [catId]);
+        `, [id]);
         return cat;
     } catch (error) {
         throw error;

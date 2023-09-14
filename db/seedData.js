@@ -19,6 +19,7 @@ async function dropTables() {
         await client.query(`
             DROP TABLE IF EXISTS cats;
             DROP TABLE IF EXISTS users;
+            DROP TABLE IF EXISTS cart;
         `);
         console.log("Finished dropping tables!");
     } catch(error) {
@@ -141,7 +142,7 @@ async function createInitialCats() {
             },
             {
                 name: "Blue",
-                imgurl: "",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgozsTMLCseiIcwWaqMbqcTyz1IkJnppUwA&usqp=CAU",
                 age: "8 months",
                 sex: "Female",
                 color: "Blue Grey",
@@ -149,16 +150,16 @@ async function createInitialCats() {
                 breed: "Russian Blue",
                 price: "FREE"
             },
-            // {
-            //     name: ,
-            //     imgurl: ,
-            //     age: ,
-            //     sex: ,
-            //     color: ,
-            //     description: ,
-            //     breed: ,
-            //     price: 
-            // },
+            {
+                name: "Latte",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUGhdTzujd-uI8O2w-MhsuGQnkmBTzhKr0rw&usqp=CAU",
+                age: "10 months",
+                sex: "Female",
+                color: "Beige with dark face, tail and legs",
+                description: "",
+                breed: "Siamese",
+                price: "FREE"
+            },
             // {
             //     name: ,
             //     imgurl: ,

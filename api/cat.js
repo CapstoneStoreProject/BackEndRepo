@@ -14,10 +14,10 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-// GET /api/cat/:catId
-router.get('/:catId', async (req, res, next) => {
+// GET /api/cat/:id
+router.get('/:id', async (req, res, next) => {
     try {
-        const cat = await getCatById(req.params.catId);
+        const cat = await getCatById(req.params.id);
         res.send(cat);
     } catch (error) {
         next(error);
