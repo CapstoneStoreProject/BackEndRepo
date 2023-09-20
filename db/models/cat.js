@@ -12,13 +12,13 @@ async function getAllCats() {
     }
 }
 
-async function createCat({ name, imgurl, age, sex, color, description, breed, price }) {
+async function createCat({ name, imgurl, age, sex, color, description, breed, neutered, price }) {
     try {
         const { rows: [cat] } = await client.query(`
-        INSERT INTO cats(name, imgurl, age, sex, color, description, breed, price)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        INSERT INTO cats(name, imgurl, age, sex, color, description, breed, neutered, price)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *;
-        `,[name, imgurl, age, sex, color, description, breed, price]);
+        `,[name, imgurl, age, sex, color, description, breed, neutered, price]);
         return cat;
     } catch (error) {
         throw error;

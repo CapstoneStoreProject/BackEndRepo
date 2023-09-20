@@ -35,11 +35,12 @@ async function createTables() {
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(50),
                 imgurl TEXT,
-                age VARCHAR(50),
+                age FLOAT,
                 sex VARCHAR(6),
                 color TEXT,
                 description TEXT,
                 breed TEXT,
+                neutered BOOLEAN DEFAULT false,
                 price VARCHAR(4)
             );
         `);
@@ -103,61 +104,133 @@ async function createInitialCats() {
             { 
                 name: "Socks", 
                 imgurl: "https://conservationcubclub.com/wp-content/uploads/2012/05/Iams-Delilah-May-12-cat.jpg",
-                age: "5 years",
-                sex: "male",
+                age: 5,
+                sex: "Male",
                 color: "grey with black stripes and white socks",
                 description: "Snuggly, loving cat. Socks enjoys long naps, chasing the laser pointer, and looking out the window.",
                 breed: "Domestic Shorthair",
+                neutered: true,
                 price: "FREE"
             },
             {
                 name: "Black Star",
                 imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd19fjBzqN49AdndZBdZmWTYYAn9exVl5Qbg&usqp=CAU",
-                age: "5 months",
-                sex: "male",
+                age: .5,
+                sex: "Male",
                 color: "Black with white star on chest",
                 description: "Rambunctious, playful, and outgoing kitty excited to get his forever home. He plays well with other cats and will make a fine addition to any family.",
                 breed: "Domestic Shorthair",
+                neutered: false,
                 price: "FREE"
             },
             {
                 name: "Punch",
                 imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxvIPwYoxrPiDl_PadvadWhBkFPa66HEO4BA&usqp=CAU",
-                age: "1 year",
+                age: 1,
                 sex: "Female",
                 color: "Black and white tuxedo cat",
                 description: "Punch is a one person cat. She doesn't like other animals or anyone other than the person she decides is her person. Do not take her if you have other pets or many people in the home. She is very affectionate to her one person.",
                 breed: "Domestic Shorthair",
+                neutered: true,
                 price: "FREE"
             },
             {
                 name: "Mia",
-                imgurl: "",
-                age: "2 years",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWCSSFPhMppxIDZg0vt0KYlSWfxldb0716vA&usqp=CAU",
+                age: 2,
                 sex: "Female",
                 color: "Black",
-                description: "",
+                description: "Independent kitty, loves to play with anything other than her cat toys, like sponges, plastic cutlery, and balled up paper.",
                 breed: "Domestic Longhair",
+                neutered: true,
                 price: "FREE"
             },
             {
                 name: "Blue",
                 imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgozsTMLCseiIcwWaqMbqcTyz1IkJnppUwA&usqp=CAU",
-                age: "8 months",
+                age: .8,
                 sex: "Female",
                 color: "Blue Grey",
                 description: "",
                 breed: "Russian Blue",
+                neutered: true,
                 price: "FREE"
             },
             {
                 name: "Latte",
                 imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUGhdTzujd-uI8O2w-MhsuGQnkmBTzhKr0rw&usqp=CAU",
-                age: "10 months",
+                age: .9,
                 sex: "Female",
                 color: "Beige with dark face, tail and legs",
                 description: "",
                 breed: "Siamese",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Henry",
+                imgurl: "",
+                age: .5,
+                sex: "Male",
+                color: "Orange",
+                description: "Henry is very outgoing and loves to be pet and look out the window",
+                breed: "Domestic Shorthair",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Aria",
+                imgurl: "",
+                age: 1.7,
+                sex: "Female",
+                color: "white, grey and brown",
+                description: "Aria is a lap cat. If you sit down she will sit on your lap every time. She loves attention and playing with curly ribbons on a stick",
+                breed: "Domestic Shorthair",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Fluffy",
+                imgurl: "",
+                age: 2,
+                sex: "Female",
+                color: "White",
+                description: "",
+                breed: "Persian",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Chloe",
+                imgurl: "",
+                age: 3,
+                sex: "Female",
+                color: "Black and white",
+                description: "Lap cat. Meows loudly when hungry",
+                breed: "Domestic Shorthair",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Dyson",
+                imgurl: "",
+                age: 1.2,
+                sex: "Male",
+                color: "Grey tuxedo",
+                description: "Loving kitty, has trouble meowing",
+                breed: "Domestic Shorthair",
+                neutered: true,
+                price: "FREE"
+            },
+            {
+                name: "Rory",
+                imgurl: "",
+                age: 1.5,
+                sex: "Male",
+                color: "",
+                description: "",
+                breed: "Maine Coon",
+                neutered: true,
                 price: "FREE"
             },
             // {
@@ -168,9 +241,10 @@ async function createInitialCats() {
             //     color: ,
             //     description: ,
             //     breed: ,
+            //     neutered: ,
             //     price: 
             // },
-            // {
+              // {
             //     name: ,
             //     imgurl: ,
             //     age: ,
@@ -178,26 +252,7 @@ async function createInitialCats() {
             //     color: ,
             //     description: ,
             //     breed: ,
-            //     price: 
-            // },
-            // {
-            //     name: ,
-            //     imgurl: ,
-            //     age: ,
-            //     sex: ,
-            //     color: ,
-            //     description: ,
-            //     breed: ,
-            //     price: 
-            // },
-            // {
-            //     name: ,
-            //     imgurl: ,
-            //     age: ,
-            //     sex: ,
-            //     color: ,
-            //     description: ,
-            //     breed: ,
+            //     neutered: ,
             //     price: 
             // },
         ]
