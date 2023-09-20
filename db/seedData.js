@@ -169,7 +169,7 @@ async function createInitialCats() {
             },
             {
                 name: "Henry",
-                imgurl: "",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm-PnEyHBukyRWYq4F3eXcSZ8ZyDBdfmuFcw&usqp=CAU",
                 age: .5,
                 sex: "Male",
                 color: "Orange",
@@ -191,7 +191,7 @@ async function createInitialCats() {
             },
             {
                 name: "Fluffy",
-                imgurl: "",
+                imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi7_OelIPg_0BPlR4gul5YVSw3JUXUofqxA&usqp=CAU",
                 age: 2,
                 sex: "Female",
                 color: "White",
@@ -233,6 +233,17 @@ async function createInitialCats() {
                 neutered: true,
                 price: "FREE"
             },
+            {
+                name: "Jinx",
+                imgurl: "",
+                age: 4,
+                sex: "Female",
+                color: "Callico",
+                description: "",
+                breed: "Domestic Shorthair",
+                neutered: true,
+                price: "FREE"
+            },
             // {
             //     name: ,
             //     imgurl: ,
@@ -244,7 +255,18 @@ async function createInitialCats() {
             //     neutered: ,
             //     price: 
             // },
-              // {
+            // {
+            //     name: ,
+            //     imgurl: ,
+            //     age: ,
+            //     sex: ,
+            //     color: ,
+            //     description: ,
+            //     breed: ,
+            //     neutered: ,
+            //     price: 
+            // },
+            // {
             //     name: ,
             //     imgurl: ,
             //     age: ,
