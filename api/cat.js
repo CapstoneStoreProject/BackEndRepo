@@ -24,15 +24,15 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-// // DELETE /api/cats/:catId
-// router.delete('/:catId', requireUser, async (req, res, next) => {
-//     try {
-//         const cat = await deleteCatById(req.params.catId);
-//         res.send(cat);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
+// DELETE /api/cats/:catId
+router.delete('/:catId', requireUser, async (req, res, next) => {
+    try {
+        const cat = await deleteCatById(req.params.catId);
+        res.send(cat);
+    } catch (error) {
+        next(error);
+    }
+});
 
 // // DELETE /api/cats
 // router.delete('/', requireUser, async (req, res, next) => {
