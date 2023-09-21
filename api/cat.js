@@ -28,6 +28,7 @@ router.get('/:id', async (req, res, next) => {
 router.delete('/:catId', requireUser, async (req, res, next) => {
     try {
         const cat = await deleteCatById(req.params.catId);
+        //loop through cart pass body rather than id req.body.cats
         res.send(cat);
     } catch (error) {
         next(error);
