@@ -99,29 +99,12 @@ async function getUserByUsername(userName) {
     console.error(error)
   }
 }
-// async function verifyUsername(userName) {
-//   try {
-//       const { rows } = await client.query(`
-//       SELECT *
-//       FROM users;  
-//       WHERE username = $1;
-//       `, [userName]);
-//       if (!rows) {
-//         return true;
-//       } else {
-//         return false;
-//       }
-//       // const [userName] = rows;
-      
-//   } catch (error) {
-//       throw error;
-//   }
-// }
+
+
 module.exports = {
   createUser,
   getAllUsers,
   getUser,
   getUserById,
   getUserByUsername,
-  // verifyUsername
 }
