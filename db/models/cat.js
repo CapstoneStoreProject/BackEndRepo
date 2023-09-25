@@ -50,7 +50,13 @@ async function deleteCatById(id) {
         throw error;
     }
 }
+// async function deleteCheckedOutCats(cart) {
+//     try {
 
+//     } catch (error) {
+//         throw error;
+//     }
+// }
 async function deleteAllCats() {
     try {
         const { rows } = await client.query(`

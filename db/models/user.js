@@ -44,13 +44,14 @@ async function getAllUsers() {
 
 async function getUser({username, password}) {
   if (!username || !password) {
+    console.log("1")
     return;
   }
-
   try {
     const user = await getUserByUsername(username);
-    if(!user) return;
-    console.log(password)
+    console.log(user, "user")
+    if(!user) return(null);
+    console.log(user.password)
     const hashedPassword = user.password;
     console.log(hashedPassword)
     const passwordsMatch = await bcrypt.compare(password, hashedPassword);
@@ -98,10 +99,29 @@ async function getUserByUsername(userName) {
     console.error(error)
   }
 }
+// async function verifyUsername(userName) {
+//   try {
+//       const { rows } = await client.query(`
+//       SELECT *
+//       FROM users;  
+//       WHERE username = $1;
+//       `, [userName]);
+//       if (!rows) {
+//         return true;
+//       } else {
+//         return false;
+//       }
+//       // const [userName] = rows;
+      
+//   } catch (error) {
+//       throw error;
+//   }
+// }
 module.exports = {
   createUser,
   getAllUsers,
   getUser,
   getUserById,
-  getUserByUsername
+  getUserByUsername,
+  // verifyUsername
 }

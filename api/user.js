@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { createUser, getUserByUsername, getUser, getAllUsers, getUserById } = require('../db/models/user.js')
+const { createUser, getUserByUsername, getUser, getAllUsers, getUserById, verifyUsername } = require('../db/models/user.js')
 const { requireUser } = require('./utils');
 const { JWT_SECRET = 'neverTell' } = process.env;
 
@@ -19,6 +19,7 @@ router.post('/login', async (req, res, next) => {
 
   try {
     const user = await getUser({username, password});
+    console.log(user, "api")
     if(!user) {
       next({
         name: 'IncorrectCredentialsError',
@@ -90,5 +91,13 @@ router.get('/users', async (req, res, next) => {
     }
 });
 
+// router.post('/users', async (req, res, next) => {
+//     try {
+//         const usernames = await verifyUsername();
+//         res.send(usernames);
+//     } catch (error) {
+//         next(error);
+//     }
+// })
 
 module.exports = router;
