@@ -35,15 +35,5 @@ router.delete('/:catId', requireUser, async (req, res, next) => {
     }
 });
 
-// // DELETE /api/cats
-// router.delete('/', requireUser, async (req, res, next) => {
-//     try {
-//         const cats = await deleteAllCats();
-//         res.send(cats);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
 
-// export router
 module.exports = router;
