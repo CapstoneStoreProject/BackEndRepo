@@ -54,6 +54,13 @@ async function createTables() {
                 active BOOLEAN DEFAULT true
             );
         `);
+
+        // await client.query(`
+        //     CREATE TABLE applications (
+        //         id SERIAL PRIMARY KEY,
+        //         user TEXT NOT NULL,
+        //     );
+        // `);
         // await client.query(`
         //     CREATE TABLE carts (
         //         cart_id SERIAL PRIMARY KEY,
